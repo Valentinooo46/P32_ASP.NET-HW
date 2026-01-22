@@ -17,6 +17,10 @@ export default function Header() {
                 <div className="flex items-center gap-4">
                     <Link to="/" className="hover:underline">Home</Link>
                     <Link to="/about" className="hover:underline">About</Link>
+                    <Link to="/transportations" className="hover:underline">Transportations</Link>
+                    {user && (
+                        <Link to="/cart" className="hover:underline">Cart</Link>
+                    )}
                 </div>
 
 

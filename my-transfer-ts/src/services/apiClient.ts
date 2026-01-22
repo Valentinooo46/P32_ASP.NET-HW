@@ -1,0 +1,18 @@
+import axios from "axios";
+import APP_ENV from "../env";
+
+const apiClient = axios.create({
+  baseURL: `${APP_ENV.API_BASE_URL}/api`,
+});
+
+apiClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers = config.headers ?? {};
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default apiClient;
+    

@@ -1,38 +1,31 @@
-﻿using Domain.Entities.Location;
-using System.ComponentModel.DataAnnotations.Schema;
+namespace Core.Models.Transportation;
 
-namespace Domain.Entities;
 
-[Table("tblTransportations")]
-public class TransportationEntity : BaseEntity<int>
+public class TransportationItemModel
 {
-    /// <summary>
-    /// Код перевезення - PS101, PS505
-    /// </summary>
+    public int Id { get; set; }
     public string Code { get; set; } = string.Empty;
 
     /// <summary>
     /// Звідки ми виїзджаємо
     /// </summary>
-    [ForeignKey(nameof(FromCity))]
-    public int FromCityId { get; set; }
-    public CityEntity FromCity { get; set; }
+    public string FromCityName { get; set; } = string.Empty;
+    public string FromCountryName { get; set; } = string.Empty;
 
     /// <summary>
     /// Куди ми приїзджаємо
     /// </summary>
-    [ForeignKey(nameof(ToCity))]
-    public int ToCityId { get; set; }
-    public CityEntity ToCity { get; set; }
+    public string ToCityName { get; set; } = string.Empty;
+    public string ToCountryName { get; set; } = string.Empty;
 
     /// <summary>
     /// Дата і час виїзду
     /// </summary>
-    public DateTime DepartureTime { get; set; }
+    public string DepartureTime { get; set; }
     /// <summary>
     /// Дата і час прибування
     /// </summary>
-    public DateTime ArrivalTime { get; set; }
+    public string ArrivalTime { get; set; }
 
     /// <summary>
     /// Загальна кількість місць
@@ -52,10 +45,6 @@ public class TransportationEntity : BaseEntity<int>
     /// виконаний
     /// немає місць
     /// </summary>
-    [ForeignKey(nameof(Status))]
-    public int StatusId { get; set; }
-    public TransportationStatusEntity Status { get; set; }
-
-    public ICollection<CartEntity> Carts { get; set; } = null!;
-
+    public string StatusName { get; set; } = string.Empty;
 }
+ 

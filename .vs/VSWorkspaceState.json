@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\my-transfer-ts",
+    "\\my-transfer-ts\\src",
+    "\\WebApiTransfer",
+    "\\WebApiTransfer\\Core",
+    "\\WebApiTransfer\\Core\\Services",
+    "\\WebApiTransfer\\Domain\\Entities",
+    "\\WebApiTransfer\\Domain\\Entities\\Identity",
+    "\\WebApiTransfer\\WebApiTransfer",
+    "\\WebApiTransfer\\WebApiTransfer\\Controllers"
+  ],
+  "SelectedNode": "\\my-transfer-ts\\src\\App.tsx",
+  "PreviewInSolutionExplorer": false
+}

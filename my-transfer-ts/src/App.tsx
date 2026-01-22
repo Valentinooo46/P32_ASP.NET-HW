@@ -30,80 +30,84 @@ import AllUsersFilterPage from "./pages/AllUsersFilterPage.tsx";
 import CitiesPage from "./pages/CitiesPage.tsx";
 import CityDescriptionPage from "./pages/CityDescriptionPage.tsx";
 import AddCities from "./pages/AddCities.tsx";
+import Transportations from "./pages/Transportations";
+import CartPage from "./pages/CartPage.tsx";            
 
 
 const MainLayout = () => {
-    return (
-        <div className="min-h-screen bg-gray-100">
-            <Header />
+ return (
+ <div className="min-h-screen bg-gray-100">
+ <Header />
 
-            <main className="p-6">
-                <Outlet />
-            </main>
-        </div>
-    );
+ <main className="p-6">
+ <Outlet />
+ </main>
+ </div>
+ );
 };
 
 export default function App() {
-    const user =
-        useAppSelector(redux => redux.auth.user);
+ const user =
+ useAppSelector(redux => redux.auth.user);
 
-    console.log("User roles", user?.roles);
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path={"/"} element={<MainLayout/>}>
-                    <Route index element={<HomePage/>}/>
-                    <Route path="/cities" element={<CitiesPage />} />
-                    <Route path="/cities/:slug" element={<CityDescriptionPage />} />
-                    <Route path="about" element={<AboutPage /> }/>,
-                    <Route path="user/LogIn" element={<LogIn /> }/>
-                    <Route path="user/register" element={<RegisterPage /> }/>
-                    <Route path="forgot-password" element={<ForgotPasswordPage/>}/>
-                    <Route path="reset-password" element={<ResetPasswordPage/>}/>
-                    <Route path="profile" element={<ProfilePage />} />
-                </Route>
-                {/* Dashboard Layout */}
-                <Route path={"/admin"} element={<AppLayout />}>
-                    <Route index element={<HomeAdmin/>} />
+ console.log("User roles", user?.roles);
+ return (
+ <BrowserRouter>
+ <Routes>
+ <Route path={"/"} element={<MainLayout/>}>
+ <Route index element={<HomePage/>}/>
+ <Route path="/cities" element={<CitiesPage />} />
+ <Route path="/cities/:slug" element={<CityDescriptionPage />} />
+ <Route path="/transportations" element={<Transportations/>} />
+ <Route path="about" element={<AboutPage /> }/>
+ <Route path="user/LogIn" element={<LogIn /> }/>
+ <Route path="user/register" element={<RegisterPage /> }/>
+ <Route path="forgot-password" element={<ForgotPasswordPage/>}/>
+ <Route path="reset-password" element={<ResetPasswordPage/>}/>
+ <Route path="profile" element={<ProfilePage />} />
+ <Route path="cart" element={<CartPage />} />
+ </Route>
+ {/* Dashboard Layout */}
+ <Route path={"/admin"} element={<AppLayout />}>
+ <Route index element={<HomeAdmin/>} />
 
-                    {/* Others Page */}
-                    <Route path="profile" element={<UserProfiles />} />
-                    <Route path="calendar" element={<Calendar />} />
-                    <Route path="blank" element={<Blank />} />
+ {/* Others Page */}
+ <Route path="profile" element={<UserProfiles />} />
+ <Route path="calendar" element={<Calendar />} />
+ <Route path="blank" element={<Blank />} />
 
-                    {/* Forms */}
-                    <Route path="form-elements" element={<FormElements />} />
+ {/* Forms */}
+ <Route path="form-elements" element={<FormElements />} />
 
-                    {/* Tables */}
-                    <Route path="basic-tables" element={<BasicTables />} />
+ {/* Tables */}
+ <Route path="basic-tables" element={<BasicTables />} />
 
-                    {/* Ui Elements */}
-                    <Route path="alerts" element={<Alerts />} />
-                    <Route path="avatars" element={<Avatars />} />
-                    <Route path="badge" element={<Badges />} />
-                    <Route path="buttons" element={<Buttons />} />
-                    <Route path="images" element={<Images />} />
-                    <Route path="videos" element={<Videos />} />
-                    {/* Charts */}
-                    <Route path="line-chart" element={<LineChart />} />
-                    <Route path="bar-chart" element={<BarChart />} />
+ {/* Ui Elements */}
+ <Route path="alerts" element={<Alerts />} />
+ <Route path="avatars" element={<Avatars />} />
+ <Route path="badge" element={<Badges />} />
+ <Route path="buttons" element={<Buttons />} />
+ <Route path="images" element={<Images />} />
+ <Route path="videos" element={<Videos />} />
+ {/* Charts */}
+ <Route path="line-chart" element={<LineChart />} />
+ <Route path="bar-chart" element={<BarChart />} />
 
-                    <Route path="cities" element={<CitiesPage />} />
-                    <Route path="add-city" element={<AddCities />} />
-                    <Route path="cities/:slug" element={<CityDescriptionPage />} />
+ <Route path="cities" element={<CitiesPage />} />
+ <Route path="add-city" element={<AddCities />} />
+ <Route path="cities/:slug" element={<CityDescriptionPage />} />
 
-                    <Route path="all-users" element={<AllUsersFilterPage/>} />
-                </Route>
-                {/* Auth Layout */}
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/signup" element={<SignUp />} />
+ <Route path="all-users" element={<AllUsersFilterPage/>} />
+ </Route>
+ {/* Auth Layout */}
+ <Route path="/signin" element={<SignIn />} />
+ <Route path="/signup" element={<SignUp />} />
 
 
-                {/* Fallback Route */}
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </BrowserRouter>
+ {/* Fallback Route */}
+ <Route path="*" element={<NotFound />} />
+ </Routes>
+ </BrowserRouter>
 
-    );
+ );
 }

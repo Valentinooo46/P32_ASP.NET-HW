@@ -52,7 +52,7 @@ builder.Services.AddAuthentication(options =>
             Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
-//Щоб отримати доступ до HttpContext в сервісах
+//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ HttpContext пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();
@@ -94,7 +94,7 @@ builder.Services.AddSwaggerGen(opt =>
 builder.Services.AddCors();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
+builder.Services.AddScoped<ITransportationService, TransportationService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IImageService, ImageService>();
@@ -103,6 +103,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISmtpService, SmtpService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 
 
@@ -155,7 +156,7 @@ app.UseStaticFiles(new StaticFileOptions
 ///{
 ///    var myAppDbContext = scoped.ServiceProvider.GetRequiredService<AppDbTransferContext>();
 ///    var roleManager = scoped.ServiceProvider.GetRequiredService<RoleManager<RoleEntity>>();
-///    myAppDbContext.Database.Migrate(); //якщо ми не робили міграціії
+///    myAppDbContext.Database.Migrate(); //пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ///    var roles = new[] { "User", "Admin" };
 ///    foreach (var role in roles)
 ///    {

@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "задача-ICartService",
+      "appliesTo": "WebApiTransfer/Core/Interfaces/ICartService.cs",
+      "type": "launch"
+    }
+  ]
+}
