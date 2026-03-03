@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  webapi:
+    build:
+      context: ./WebApiTransfer
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./my-transfer-ts
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - webapi
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

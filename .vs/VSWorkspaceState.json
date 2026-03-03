@@ -4,13 +4,13 @@
     "\\my-transfer-ts",
     "\\my-transfer-ts\\src",
     "\\WebApiTransfer",
-    "\\WebApiTransfer\\Core",
-    "\\WebApiTransfer\\Core\\Services",
-    "\\WebApiTransfer\\Domain\\Entities",
-    "\\WebApiTransfer\\Domain\\Entities\\Identity",
     "\\WebApiTransfer\\WebApiTransfer",
-    "\\WebApiTransfer\\WebApiTransfer\\Controllers"
+    "\\WebApiTransfer\\WebApiTransfer\\images",
+    "\\WebApiTransfer\\WebApiTransfer\\JSON",
+    "\\WebApiTransfer\\WebApiTransfer\\Properties",
+    "\\WorkingMVC\\WorkingMVC",
+    "\\WorkingMVC\\WorkingMVC\\Controllers"
   ],
-  "SelectedNode": "\\my-transfer-ts\\src\\App.tsx",
+  "SelectedNode": "\\WebApiTransfer\\WebApiTransfer\\JSON\\cities.json",
   "PreviewInSolutionExplorer": false
 }
